@@ -1,1 +1,1 @@
-# BathReminder
+Reminder for bathing
