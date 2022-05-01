@@ -1,4 +1,5 @@
 let update = document.getElementById("update");
+let music = new Audio("Juanita Bynum - dont mind waiting.mp3");
 function countdown(){
     const newDate = new Date(document.getElementById('bath-date').value).getTime();
     const currentDate = new Date().getTime();
@@ -14,10 +15,21 @@ function countdown(){
     document.getElementById('hours').innerHTML = formatTime(hours);
     document.getElementById('minutes').innerHTML = formatTime(minutes);
     document.getElementById('seconds').innerHTML = formatTime(seconds);
+    formatSec(TotalSeconds)
 }
 
 function formatTime(time){
     return time < 10 ? `0${time}` : time; 
+}
+
+function formatSec(time){
+    if(time < 0){
+    document.getElementById('days').innerHTML = '00';
+    document.getElementById('hours').innerHTML = '00';
+    document.getElementById('minutes').innerHTML = '00';
+    document.getElementById('seconds').innerHTML = '00';
+    update.innerHTML = "It's Time To Take Your Bath!";
+    }
 }
 
 countdown();
